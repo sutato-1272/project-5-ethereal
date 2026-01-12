@@ -4,30 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Ethereal Estates | Hunian Pintar 3D & Investasi Properti Mewah</title>
-    <meta name="description" content="Dapatkan pengalaman hunian masa depan dengan teknologi Smart Home AI. Investasi properti eksklusif dengan desain 3D Spatial UI yang imersif dan bernilai tinggi.">
-    <meta name="keywords" content="Jasa Landing Page Properti, Investasi Properti Mewah, Smart Home Indonesia, Real Estate 3D, Rumah Pintar AI, Ethereal Estates, Beli Rumah Mewah Jakarta">
-    <link rel="canonical" href="https://omniversal-3d.vercel.app/project5">
+    <title>Ethereal Estates | Arsitektur Masa Depan & Hunian Pintar AI</title>
+    <meta name="description" content="Ethereal Estates menghadirkan hunian mewah dengan teknologi spatial UI. Investasi properti eksklusif dengan keamanan biometrik dan sistem AI terintegrasi.">
+    <meta name="keywords" content="Real Estate Mewah Jakarta, Smart Home AI, Rumah Pintar Masa Depan, Investasi Properti Premium, Ethereal Estates 3D">
     
-    <meta property="og:title" content="Ethereal Estates - Masa Depan Properti Ada Di Sini">
-    <meta property="og:description" content="Hunian Pintar dengan Integrasi 3D Spatial UI. Eksklusif & Terbatas.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200">
-    <meta property="og:type" content="website">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "name": "Ethereal Estates",
-      "description": "Agen properti mewah dengan teknologi landing page 3D imersif.",
-      "url": "https://omniversal-3d.vercel.app/",
+      "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+      "priceRange": "$$$$",
       "telephone": "+6285283212205",
-      "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Jakarta",
-        "addressCountry": "ID"
-      }
+      "url": "https://project-5-ethereal.vercel.app/"
     }
     </script>
 
@@ -36,161 +25,136 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.28/build/spline-viewer.js"></script>
 
     <style>
-        :root { --accent: #8b5cf6; --glow: #c084fc; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030014; color: #fff; scroll-behavior: smooth; }
+        :root { --accent: #a855f7; --glow: #3b82f6; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #fff; margin: 0; overflow-x: hidden; }
 
-        /* AURA BACKGROUND (Inspired by Aura.build) */
-        .aura-canvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.1) 0%, transparent 40%);
+        /* HERO BACKGROUND DENGAN GAMBAR (Inspired by Theme Switcher) */
+        .hero-bg-wrapper {
+            position: absolute; top: 0; left: 0; width: 100%; height: 120vh;
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000');
+            background-size: cover; background-position: center;
+            z-index: -2; filter: brightness(0.4) saturate(1.2);
+        }
+
+        /* AURA OVERLAY MASKING */
+        .aura-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 120vh;
+            background: radial-gradient(circle at 50% 0%, transparent 0%, #020617 80%),
+                        linear-gradient(to bottom, transparent, #020617);
             z-index: -1;
         }
 
-        /* SIAGA 1: GLASS BORDER BEAM BUTTON (MODIFIED A034D) */
+        /* INTERACTIVE MOUSE GLOW */
+        .mouse-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(60px);
+            transform: translate(-50%, -50%); transition: 0.1s linear;
+        }
+
+        /* GLASS BEAM BUTTON (MODIFIED A034D) */
         .glass-beam-btn {
-            position: relative;
-            display: inline-flex;
-            padding: 1rem 2.5rem;
-            background: rgba(255, 255, 255, 0.05); /* Nuansa Kaca Transparan */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 12px;
-            overflow: hidden;
-            font-weight: 700;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            position: relative; display: inline-flex; padding: 1rem 2.5rem;
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+            border-radius: 12px; overflow: hidden; font-weight: 800; border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* Animasi Border Beam yang muter */
         .glass-beam-btn::before {
-            content: '';
-            position: absolute;
-            inset: -150%;
-            background: conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--accent) 300deg, var(--glow) 360deg);
-            animation: rotate-beam 4s linear infinite;
-            z-index: -2;
+            content: ''; position: absolute; inset: -150%;
+            background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, var(--accent) 320deg, var(--glow) 360deg);
+            animation: rotate-beam 3s linear infinite; z-index: -2;
         }
-
-        /* Lapisan Kaca Utama */
         .glass-beam-btn::after {
-            content: '';
-            position: absolute;
-            inset: 1.5px;
-            background: rgba(10, 5, 25, 0.8); /* Kontras biar tulisan kebaca */
-            backdrop-filter: blur(10px);
-            border-radius: 11px;
-            z-index: -1;
+            content: ''; position: absolute; inset: 1.5px; background: rgba(2, 6, 23, 0.9); border-radius: 11px; z-index: -1;
         }
+        @keyframes rotate-beam { 100% { transform: rotate(360deg); } }
+        .glass-beam-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(168, 85, 247, 0.4); }
 
-        .glass-beam-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+        .text-gradient { background: linear-gradient(to right, #fff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* SEMANTIC LAYOUT */
+        .container-custom { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .spline-hero { position: absolute; right: -10%; top: 50%; transform: translateY(-50%); width: 60%; height: 80%; z-index: 1; pointer-events: none; }
 
-        @keyframes rotate-beam {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* HEADER SEMANTIC */
-        header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 1.5rem 5%;
-            background: rgba(3, 0, 20, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #fff, var(--glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Performance: Lazy Loading Spline */
-        .spline-container { height: 100vh; width: 100%; position: absolute; top: 0; z-index: 0; }
+        @media (max-width: 768px) { .spline-hero { width: 100%; right: 0; opacity: 0.5; } }
     </style>
 </head>
 <body>
 
-    <div class="aura-canvas"></div>
+    <div class="mouse-glow" id="glow"></div>
+    <div class="hero-bg-wrapper"></div>
+    <div class="aura-overlay"></div>
 
-    <header class="flex justify-between items-center">
-        <div class="text-2xl font-extrabold tracking-tighter">ETHEREAL <span class="text-purple-500">ESTATES.</span></div>
-        <nav class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-            <a href="#home" class="hover:text-white transition">Home</a>
-            <a href="#experience" class="hover:text-white transition">Experience</a>
-            <a href="#investment" class="hover:text-white transition">Investment</a>
-        </nav>
-        <a href="https://wa.me/6285283212205" class="px-6 py-2 border border-white/20 rounded-full text-[10px] font-bold uppercase hover:bg-white hover:text-black transition">Book Tour</a>
+    <header class="fixed top-0 w-full z-[100] py-8">
+        <div class="container-custom flex justify-between items-center">
+            <div class="text-2xl font-black italic tracking-tighter">ETHEREAL<span class="text-purple-500">.</span></div>
+            <nav class="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+                <a href="#" class="hover:text-white transition">Units</a>
+                <a href="#" class="hover:text-white transition">Intelligence</a>
+                <a href="#" class="hover:text-white transition">Gallery</a>
+            </nav>
+            <a href="https://wa.me/6285283212205" class="bg-white text-black text-[10px] font-black px-6 py-2 rounded-full uppercase">Private Access</a>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="relative h-screen flex items-center px-6 md:px-[10%]">
-            <div class="spline-container">
-                <spline-viewer url="https://prod.spline.design/6Wq1Q7YRyM6Z9n3Z/scene.splinecode" loading="lazy"></spline-viewer>
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="spline-hero">
+                <spline-viewer url="https://prod.spline.design/6Wq1Q7YRyM6Z9n3Z/scene.splinecode"></spline-viewer>
             </div>
 
-            <div class="relative z-10 max-w-2xl">
-                <div class="inline-block bg-purple-500/10 border border-purple-500/30 px-4 py-1 rounded-full mb-6">
-                    <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest">Limited Collection 2026</span>
+            <div class="container-custom relative z-10">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-3 mb-8 bg-white/5 border border-white/10 px-4 py-1 rounded-full">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
+                        <span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Global Luxury Real Estate 2026</span>
+                    </div>
+                    <h1 class="text-6xl md:text-[110px] font-black leading-[0.8] mb-8 tracking-tighter">
+                        LEVEL <br> <span class="text-gradient italic">SUPREME.</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-lg leading-relaxed font-light">
+                        Miliki hunian yang tidak hanya melindungi, tapi juga mengerti Anda. Integrasi <span class="text-white font-bold">Spatial Intelligence</span> dalam setiap jengkal kemewahan.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-6">
+                        <a href="https://wa.me/6285283212205" class="glass-beam-btn">
+                            <span>RESERVASI SEKARANG →</span>
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tighter">
-                    HUNI MASA <br> <span class="text-gradient">DEPAN.</span>
-                </h1>
-                <p class="text-gray-400 text-lg md:text-xl mb-10 font-light leading-relaxed">
-                    Lebih dari sekadar rumah. Ethereal Estates adalah mahakarya <span class="text-white font-bold italic">Desain Spatial</span> yang terintegrasi dengan AI untuk kenyamanan mutlak.
-                </p>
-                
-                <a href="https://wa.me/6285283212205" class="glass-beam-btn">
-                    <span>Lihat Unit 3D Sekarang →</span>
-                </a>
             </div>
         </section>
 
-        <section id="experience" class="py-32 px-6 md:px-[10%] bg-black/50 backdrop-blur-xl relative z-10">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8 italic">Teknologi Tanpa Batas</h2>
-                    <p class="text-gray-400 mb-6">Setiap unit dilengkapi dengan sistem otomasi suara dan pencahayaan cerdas yang menyesuaikan dengan mood Anda. Inilah standar baru properti mewah Indonesia.</p>
-                    <ul class="space-y-4 text-sm font-bold text-purple-400">
-                        <li>✦ Smart Security with Face Recognition</li>
-                        <li>✦ Zero-Emission Solar Integration</li>
-                        <li>✦ Private 3D Cinema Lounge</li>
-                    </ul>
+        <section class="py-20 bg-black/40 backdrop-blur-md border-y border-white/5 relative z-10">
+            <div class="container-custom grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl font-black mb-1">12</div>
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Exclusive Units</div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="h-64 bg-white/5 rounded-3xl border border-white/10 p-6 flex items-end">
-                        <span class="text-xs font-bold uppercase tracking-widest">Smart Kitchen</span>
-                    </div>
-                    <div class="h-64 bg-white/5 rounded-3xl border border-white/10 p-6 flex items-end translate-y-12">
-                        <span class="text-xs font-bold uppercase tracking-widest">Zen Garden</span>
-                    </div>
+                <div class="text-center">
+                    <div class="text-3xl font-black mb-1">24/7</div>
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">AI Concierge</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-black mb-1">100%</div>
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Private Security</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-black mb-1">4.9/5</div>
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Investor Rating</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-20 px-6 border-t border-white/5 relative z-10 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase">Siap Menjadi Bagian Dari Masa Depan?</h2>
-            <p class="text-gray-500 mb-12">Hanya tersedia 12 unit eksklusif untuk kuartal pertama 2026. Jangan biarkan kesempatan ini hilang.</p>
-            
-            <a href="https://wa.me/6285283212205" class="glass-beam-btn">
-                <span>Konsultasi Investasi (WA)</span>
-            </a>
-
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-[10px] font-bold text-gray-700 uppercase tracking-[0.2em]">
-                <div>© 2026 OMNIVERSAL</div>
-                <div>EST. JAKARTA</div>
-                <div>SEO OPTIMIZED</div>
-                <div>SIAGA 1 SECURE</div>
-            </div>
-        </div>
-    </footer>
+    <script>
+        // INTERACTIVE MOUSE EFFECT
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
 
 </body>
 </html>
