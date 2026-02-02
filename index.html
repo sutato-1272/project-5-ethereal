@@ -3,279 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MANSION - TITAN LUXURY ESTATE</title>
+    <meta name="description" content="Hunian Mewah Masa Depan. Smart Home, Private Pool, dan Lokasi Premium.">
     
-    <title>ETHEREAL ESTATES | Investasi Hunian Pintar Mewah 2026</title>
-    <meta name="description" content="Ethereal Estates menghadirkan hunian mewah masa depan dengan teknologi Smart Home AI. Investasi properti eksklusif dengan desain imersif.">
-    <meta name="keywords" content="Real Estate Mewah, Smart Home Indonesia, Investasi Properti Premium, Ethereal Estates, Landing Page Properti 3D, Jual Rumah Mewah">
-    <meta name="author" content="Ciledug Promo Property Division">
-    
-    <meta name="google-site-verification" content="PASTE_KODE_GSC_DISINI" />
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONTOH_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-CONTOH_ID'); 
-      gtag('config', 'G-CONTOH_ID'); 
-    </script>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    
-    // Ganti 'MASUKAN_ID_PIXEL_DISINI' dengan ID Pixel Asli
-    fbq('init', 'MASUKAN_ID_PIXEL_DISINI');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=MASUKAN_ID_PIXEL_DISINI&ev=PageView&noscript=1"
-    /></noscript>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.28/build/spline-viewer.js"></script>
-
     <style>
-        :root { --accent: #8b5cf6; --glow: #3b82f6; --dark-bg: #0a0a0a; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark-bg); color: #fff; margin: 0; overflow-x: hidden; }
-
-        /* HERO BACKGROUND */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            /* Fallback image jika 3D loading */
-            background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,1)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* 1. RESET & CORE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #020812; /* Deepest Navy */
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* GLASS PANEL (LEBIH PEKAT UNTUK KETERBACAAN/SIAGA 1) */
-        .glass-hero {
-            background: rgba(15, 15, 15, 0.85); /* Dark Armor */
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 30px;
-            padding: 3rem;
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
-            position: relative;
-            overflow: hidden;
-        }
-        /* Efek Kilat Halus di Panel */
-        .glass-hero::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
-            transform: skewX(-25deg);
-            animation: shine 6s infinite;
-        }
-        @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
-
-        /* BUTTON AURA SIAGA 1 (AGRESIF) */
-        .aura-btn {
-            position: relative; display: inline-flex; padding: 1.2rem 3rem;
-            background: #000; border-radius: 12px; overflow: hidden;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
-            font-size: 0.9rem; transition: 0.4s; color: white;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-            text-decoration: none;
-        }
-        .aura-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
-        .aura-btn::before {
-            content: ''; position: absolute; inset: -200%;
-            background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, var(--accent) 320deg, var(--glow) 360deg);
-            animation: rotate-beam 3s linear infinite;
-        }
-        .aura-btn::after {
-            content: ''; position: absolute; inset: 2px; background: #000; border-radius: 10px; z-index: 1;
-        }
-        .aura-btn span {
-            position: relative; z-index: 2;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        @keyframes rotate-beam { 100% { transform: rotate(360deg); } }
-
-        /* PROPERTY CARDS */
-        .property-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px; overflow: hidden;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .property-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        /* 2. VARIABLES (THEME CONFIG) */
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --navy: #051025;
+            --navy-light: #0f224a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(212, 175, 55, 0.3);
         }
 
-        /* MAP FRAME (CYBER STYLE) */
-        .cyber-map {
-            position: relative;
-            border: 1px solid #333;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-        }
-        .cyber-map::after {
-            content: "PROJECT LOCATION // SECURE AREA";
-            position: absolute; bottom: 0; left: 0; right: 0;
-            background: rgba(0,0,0,0.8); color: var(--accent);
-            font-size: 10px; font-weight: bold; letter-spacing: 3px;
-            padding: 8px; text-align: center; border-top: 1px solid var(--accent);
-        }
-
+        /* 3. TYPOGRAPHY SULTAN */
+        h1, h2, h3 { font-family: 'Times New Roman', serif; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
+        .text-gold { color: var(--gold); }
         .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            background: linear-gradient(to right, #fff, var(--gold));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .fade-up { animation: fadeUp 1s ease forwards; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* 4. LAYOUT UTILITIES */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+        /* 5. COMPONENTS (TITAN AURA) */
+        
+        /* Glass Card */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); background: rgba(212, 175, 55, 0.05); }
+        
+        /* Button Sultan */
+        .btn {
+            display: inline-block; padding: 15px 40px;
+            background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b);
+            background-size: 200% auto;
+            color: #000; font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;
+            text-decoration: none; transition: 0.5s; cursor: pointer; border: none;
+            clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+        }
+        .btn:hover { background-position: right center; box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+
+        /* 6. HERO SECTION (IMMERSIVE) */
+        .hero {
+            height: 100vh; width: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(2,8,18,0.4), #020812),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative;
+        }
+        .hero-content { z-index: 10; padding: 20px; border: 1px solid var(--border); background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { color: #ccc; font-size: 1.2rem; margin-bottom: 30px; font-family: sans-serif; }
+
+        /* 7. GALLERY (HOVER ZOOM) */
+        .gallery-item { height: 250px; overflow: hidden; border: 1px solid var(--gold); position: relative; }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; filter: brightness(0.8); }
+        .gallery-item:hover .gallery-img { transform: scale(1.1); filter: brightness(1.1); }
+        .gallery-tag { 
+            position: absolute; bottom: 0; left: 0; background: var(--gold); color: #000; 
+            padding: 5px 15px; font-size: 12px; font-weight: bold; text-transform: uppercase;
+        }
+
+        /* 8. FORM (MINIMALIST) */
+        input, select, textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: rgba(255,255,255,0.05); border: 1px solid #333;
+            color: #fff; font-family: sans-serif; outline: none; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-color: var(--gold); background: rgba(255,255,255,0.1); }
+
+        /* 9. MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .section { padding: 50px 0; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="fixed top-0 w-full z-[100] px-6 py-4 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div class="text-xl md:text-2xl font-black italic tracking-tighter">ETHEREAL<span class="text-purple-500">ESTATES.</span></div>
-        <a href="https://wa.me/6285283212205?text=Halo%20Admin,%20saya%20tertarik%20investasi%20di%20Ethereal%20Estates" target="_blank" class="bg-white text-black px-6 py-2 rounded-full font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-purple-500 hover:text-white hover:scale-105 transition shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            Consult VIP
-        </a>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="text-gold">LUXURY SMART HOME 2026</p>
+                <h1>THE MANSION <br><span class="text-gradient">TITAN ESTATE</span></h1>
+                <p>Hunian Eksklusif untuk Pribadi yang Mengerti Arti Kesempurnaan.</p>
+                <a href="#contact" class="btn">JADWALKAN PRIVATE VIEWING</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="container mx-auto px-6 grid md:grid-cols-2 items-center gap-12 pt-24 md:pt-0">
-                <div class="glass-hero fade-up relative z-10 order-2 md:order-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="w-12 h-[2px] bg-purple-500 animate-pulse"></span>
-                        <span class="text-xs font-bold uppercase tracking-[0.4em] text-purple-300">New Standard 2026</span>
+    <section class="section">
+        <div class="container grid-2">
+            <div>
+                <h2 class="text-gold">BUKAN SEKADAR RUMAH</h2>
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">INVESTASI GAYA HIDUP & PRESTISE</h3>
+                <p style="color:#aaa; margin-bottom: 20px;">
+                    Mencari hunian mewah di tengah kota seringkali mengorbankan ketenangan. The Mansion hadir sebagai oase. 
+                    Dilengkapi teknologi Smart Home AI terkini, keamanan 24 jam, dan desain arsitektur timeless.
+                </p>
+                <div class="grid-2" style="gap: 10px; margin-top: 20px;">
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <h4 class="text-gold">500 m²</h4>
+                        <small>Luas Tanah</small>
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-black leading-[0.9] mb-8 tracking-tighter">
-                        THE ART OF <br> <span class="text-gradient">LUXURY LIVING.</span>
-                    </h1>
-                    <p class="text-gray-300 text-sm md:text-lg mb-10 leading-relaxed font-medium">
-                        Bukan sekadar hunian, ini adalah aset masa depan. Dilengkapi <b class="text-white">Smart Home AI</b> dan desain arsitektur kelas dunia. Amankan unit Anda sebelum harga naik.
-                    </p>
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <a href="https://wa.me/6285283212205?text=Halo%20Admin,%20saya%20mau%20AMANKAN%20UNIT%20VIP%20Ethereal%20Estates" target="_blank" class="aura-btn justify-center">
-                            <span>AMANKAN UNIT VIP →</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="h-[400px] md:h-[600px] w-full relative order-1 md:order-2">
-                    <spline-viewer url="https://prod.spline.design/6Wq1Q7YRyM6Z9n3Z/scene.splinecode"></spline-viewer>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 container mx-auto bg-[#0a0a0a]">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase text-white">Masterpiece Collection</h2>
-                <div class="h-1 w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="property-card group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1000" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Sky Penthouse">
-                        <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full animate-pulse">HOT DEAL</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 italic text-white">SKY PENTHOUSE</h3>
-                        <p class="text-gray-400 text-xs mb-6 leading-relaxed">Nikmati pemandangan kota 360° dari titik tertinggi. Privasi total dengan private lift.</p>
-                        
-                        <a href="https://wa.me/6285283212205?text=Halo%20Admin,%20saya%20minat%20info%20detail%20SKY%20PENTHOUSE" target="_blank" class="block text-center w-full py-3 rounded-lg border border-purple-500 text-purple-400 font-bold text-xs hover:bg-purple-500 hover:text-white transition-all uppercase tracking-widest">
-                            Lihat Detail Unit
-                        </a>
-
-                        <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/10">
-                            <span class="text-white font-black text-sm">IDR 5.5 M</span>
-                            <span class="text-[10px] text-gray-500">SISA 2 UNIT</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="property-card group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Glass Mansion">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 italic text-white">GLASS MANSION</h3>
-                        <p class="text-gray-400 text-xs mb-6 leading-relaxed">Konsep dinding kaca temper dengan integrasi cahaya matahari alami & sensor AI.</p>
-                        
-                        <a href="https://wa.me/6285283212205?text=Halo%20Admin,%20saya%20minat%20info%20detail%20GLASS%20MANSION" target="_blank" class="block text-center w-full py-3 rounded-lg border border-purple-500 text-purple-400 font-bold text-xs hover:bg-purple-500 hover:text-white transition-all uppercase tracking-widest">
-                            Lihat Detail Unit
-                        </a>
-
-                        <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/10">
-                            <span class="text-white font-black text-sm">IDR 3.2 M</span>
-                            <span class="text-[10px] text-gray-500">PRE-ORDER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="property-card group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Modern Zen">
-                        <div class="absolute top-4 right-4 bg-green-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">BEST SELLER</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 italic text-white">MODERN ZEN</h3>
-                        <p class="text-gray-400 text-xs mb-6 leading-relaxed">Harmoni alam dan teknologi. Taman indoor otomatis dengan sistem pengairan pintar.</p>
-                        
-                        <a href="https://wa.me/6285283212205?text=Halo%20Admin,%20saya%20minat%20info%20detail%20MODERN%20ZEN" target="_blank" class="block text-center w-full py-3 rounded-lg border border-purple-500 text-purple-400 font-bold text-xs hover:bg-purple-500 hover:text-white transition-all uppercase tracking-widest">
-                            Lihat Detail Unit
-                        </a>
-
-                        <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/10">
-                            <span class="text-white font-black text-sm">IDR 2.8 M</span>
-                            <span class="text-[10px] text-gray-500">LIMITED SLOT</span>
-                        </div>
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <h4 class="text-gold">450 m²</h4>
+                        <small>Luas Bangunan</small>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="py-16 px-6 bg-black relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <div class="flex items-center gap-3 mb-8 justify-center">
-                    <span class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
-                    <h2 class="text-xl font-bold tracking-widest uppercase text-gray-400">PRIME LOCATION ACCESS</h2>
-                </div>
-                
-                <div class="cyber-map h-[400px] w-full bg-gray-900">
-                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15864.716909516854!2d106.704859!3d-6.24009405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88ed343af45fc195%3A0x98e5b8eaad8e2564!2sCiledugPromo.biz.id%20%7C%20Layanan%20Bisnis%20%26%20Pemasaran!5e0!3m2!1sid!2sid!4v1768642599691!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <p class="text-center text-gray-500 text-[10px] mt-6 tracking-[0.2em] uppercase">Strategis di Pusat Kota // Akses Tol 5 Menit // Bebas Banjir</p>
+            <div class="gallery-item" style="height: 400px;">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600" class="gallery-img" alt="Interior">
             </div>
-        </section>
-    </main>
-
-    <footer class="py-12 border-t border-white/10 text-center bg-[#050505]">
-        <div class="mb-4">
-            <span class="text-xl font-black italic tracking-tighter">ETHEREAL<span class="text-purple-500">ESTATES.</span></span>
         </div>
-        <p class="text-[10px] font-bold tracking-[1.5em] text-gray-600 uppercase">Part of Omniversal Network © 2026</p>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center text-gradient" style="text-align: center; margin-bottom: 40px;">GALERI EKSKLUSIF</h2>
+            <div class="grid-3">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=500" class="gallery-img" alt="Kitchen">
+                    <div class="gallery-tag">KITCHEN</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=500" class="gallery-img" alt="Living Room">
+                    <div class="gallery-tag">LIVING ROOM</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=500" class="gallery-img" alt="Pool">
+                    <div class="gallery-tag">PRIVATE POOL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--navy-light);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">FASILITAS <span class="text-gold">SULTAN</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3 class="text-gold">🤖 SMART HOME</h3>
+                    <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Kontrol lampu, AC, dan keamanan hanya dengan suara atau Smartphone Anda.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-gold">🛡️ 24H SECURITY</h3>
+                    <p style="font-size: 14px; color: #ccc; margin-top: 10px;">One gate system dengan CCTV AI Face Recognition untuk keamanan maksimal.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-gold">🌿 GREEN LIVING</h3>
+                    <p style="font-size: 14px; color: #ccc; margin-top: 10px;">Taman tropis pribadi dan sirkulasi udara alami di setiap sudut ruangan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container grid-2">
+            <div style="height: 400px; border: 1px solid var(--gold); filter: grayscale(100%) invert(92%) contrast(83%);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.336495676344!2d106.69756131476906!3d-6.219283995497985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9b5b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sTangerang!5e0!3m2!1sid!2sid!4v1610000000000!5m2!1sid!2sid" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div>
+                <h2 class="text-gold">MINAT SERIUS?</h2>
+                <p style="color:#ccc; margin-bottom: 20px;">Isi data di bawah untuk mendapatkan Brosur PDF & Price List Terbaru.</p>
+                <form>
+                    <input type="text" placeholder="Nama Lengkap">
+                    <input type="text" placeholder="Nomor WhatsApp">
+                    <select>
+                        <option>Pilih Tipe Unit</option>
+                        <option>Type 450 (The King)</option>
+                        <option>Type 300 (The Queen)</option>
+                    </select>
+                    <button type="button" class="btn" style="width: 100%;" onclick="window.location.href='https://wa.me/6285283212205?text=Halo%20Admin,%20Saya%20Minat%20Info%20Mansion%20Titan'">
+                        KIRIM & DAPATKAN PDF
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 20px 0; text-align: center; border-top: 1px solid #333; font-size: 12px; color: #666;">
+        <div class="container">
+            <p>POWERED BY CILEDUG PROMO | TITAN AURA HYBRID ENGINE</p>
+        </div>
     </footer>
 
 </body>
